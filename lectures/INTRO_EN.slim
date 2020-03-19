@@ -1,0 +1,121 @@
+= slide 'About course' do
+  ol
+    li HTML basics (PS+HW0)
+    li PHP + Forms (MG+HW1)
+    li JavaScript part 1 (NG)
+    li CSS part 1 (NG+HW2)
+    li Authentication & Authorization (MG)
+    li PHP + MySQL (MP+HW3)
+    li CSS part 2 (MD+HW4)
+    li JavaScript part 2 (MP)
+    li Project development
+
+= slide 'Evaluation' do
+  p 40% - essay
+  p 40% - course project
+  p 20% - homeworks (or test)
+
+= slide 'Homeworks' do
+  list:
+    Frist 5-8 weeks there will be homeworks (or tests).
+    Duration - 2 weeks - until corresponding sunday night (23:59h).
+    Submission links are closed and you cannot submit your work after deadline.    
+    In the occasion of plagiarism (teamwork) points of the result are divided on number of people (or equal to zero) - check your assistant.
+    For some of the homework you may receive feedback and review  =&gt; try to write clean code.
+
+= slide 'Project' do
+  list:
+    Choose a project topic (or specified by the lecturer)
+    Backend language - check requirements
+    No libraries of frameworks allowed - like rails / django / bootstrap
+    Up to 1-2 people in the team (more people means more strict separation of work)
+    You need to have: client, server, db, clean code, documentation
+    Documentation template will be provided to you
+
+= slide 'Essay' do
+  ol
+    li.action Select topic from provided list (www related)
+    li.action Write the essay (around ten pages of text)
+    li.action Submit as html file (semantic, good looking)
+    li.action Invite people and defend in front of people
+
+= slide 'Sample HTML page' do
+  p Create and save file index.html and open it with browser.
+  pre.highlight.html
+    | &lt;!DOCTYPE html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt; My title &lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt; My header &lt;/h1&gt;
+        &lt;a href="http://example.com"&gt; My Link &lt;/a&gt;
+      &lt;/body&gt;
+      &lt;/html&gt;
+
+= slide 'Headings' do
+  pre.highlight.html
+    | &lt;h1&gt; This is heading 1 &lt;/h1&gt;
+      &lt;h2&gt; This is heading 2 &lt;/h2&gt;
+      &lt;h3&gt; This is heading 3 &lt;/h3&gt;
+      &lt;h4&gt; This is heading 4 &lt;/h4&gt;
+      &lt;h5&gt; This is heading 5 &lt;/h5&gt;
+      &lt;h6&gt; This is heading 6 &lt;/h6&gt;
+
+= slide 'Paragraph' do
+  pre.highlight.html
+    | &lt;p&gt; Paragraph with text. &lt;/p&gt;
+
+= slide 'Sections (without semantics)' do
+  pre.highlight.html
+    | &lt;span&gt; Inline text here. &lt;/span&gt;
+
+      &lt;div&gt; Block content here. &lt;/div&gt;
+
+= slide 'Lists' do
+  p Ordered
+  pre.highlight.html
+    | &lt;ol&gt;
+          &lt;li&gt; First list item &lt;/li&gt;
+          &lt;li&gt; Second list item &lt;/li&gt;
+          &lt;li&gt; Third list item &lt;/li&gt;
+      &lt;/ol&gt;
+  p Un-ordered
+  pre.highlight.html
+    | &lt;ul&gt;
+          &lt;li&gt; One list item &lt;/li&gt;
+          &lt;li&gt; Some list item &lt;/li&gt;
+          &lt;li&gt; Another list item &lt;/li&gt;
+      &lt;/ul&gt;
+
+= slide 'Other tags' do
+  p Hyperlink
+  pre.highlight.html
+    | &lt;a href="http://example.com" title="Link to example.com"&gt; My Link &lt;/a&gt;
+  p Image
+  pre.highlight.html
+    | &lt;img src="http://example.com/image.jpg" alt="Example Image" /&gt;
+  p Metadata
+  pre.highlight.html
+    | &lt;meta charset="UTF-8" /&gt;
+
+= slide 'Semantic elements' do
+  img src="images/html5_structure.gif" alt="semantic tags"
+
+= slide 'Editors' do
+  list:
+    <a href="http://notepad-plus-plus.org/">Notepad++</a> - sumple, but do the job
+    <a href="http://www.sublimetext.com/">Sublime Text</a> - fast with more features
+    <a href="https://code.visualstudio.com/">VS Code</a> - popular last years
+    If you fauvorite editor is missing or you have problems with the permissions on the computers in the lab - just use portable version. (like one of "notepad++ portable" etc)
+
+= slide 'Task (HW): Simple HTML page' do
+  p Create file with .html extention and content on <strong>english, bulgarian and your native language</strong>.
+  p Create base html structure (html, head, title, body) and put h1 header tag and Your name and faculty number.
+  p Add paragraph with few words about you or your hobbies.
+  p Add numbered list with 5 of your fauvorite foods.
+  p Add link to your facebook page or moodle profile image, which opens in new page.
+  p Submit result files as HW0_[FN]_FirstName_LastName_[LANG].html (without brackets []).
+    b For example: HW0_9999_Milen_Petrov_BG.html and HW0_9999_Milen_Petrov_EN.html - for Homework0, f.n. 9999, names: Milen Petrov and bulgarian and english versions
+
+

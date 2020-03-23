@@ -1,0 +1,160 @@
+= slide 'Course intro' do
+  / h2 Course 
+  h2 Web technologies and Architectures (2020)
+  p `Sofia University, Faculty of Mathematics and Informatics`
+  p assoc. prof. Milen Petrov
+
+= slide 'TOC' do
+  p.action Participants presentation
+  p.action Discussion and Practice
+  p.action Learning platforms and tools
+  p.action Topics
+  p.action Evaluation
+  p.action Logistics (timeslots, handonlabs, breaks, AOB)
+= slide 'Lector' do
+  img src="images/mp_prof.jpg" width="200px"/
+  ul
+    li.action assoc. prof. Milen Petrov (<a href="https://www.fmi.uni-sofia.bg/en/faculty/milen-yordanov-petrov">info</a>)
+    li.action Sofia University, Bulgaria
+    li.action Deaprtment of Software Engineering
+    li.action email: <a href="mailto:milen.petrov@gmail.com">milen.petrov@gmail.com</a> , milenp@fmi.uni-sofia.bg
+    li.action Office 208 (Deans room)/Room 402, Faculty of Mathematics and Informatics, James Baucher 5 Blvd
+    li.action Apointment: 1 day in advance via email (or during lecture hours)
+    li.action LinkedIn: <a href="https://www.linkedin.com/in/milen-petrov-6ab75917/" target="_blank"> profile</a>
+
+= slide 'What about you?' do
+  / h2 Course 
+  ol
+    li.action Your names
+    li.action Where are you born/from?
+    li.action Your background (High School, University, Subject)
+    li.action Which year?
+    li.action Your favourite language and/or web technologies?
+    li.action Hobbies?
+  /   li.action What did you expect from the course
+
+= slide 'Discussion' do
+  ul
+    li.action Imagine that yesterday course was ended, and you meet your best friend...
+    li.action You are so excited that you participated in the course!
+    li.action What and how did you explain to your friend about unforgettable moments?  
+
+= slide 'Practice' do
+  h2 Teach what you learn!
+  img src="images/learn-pyramid.png" width="600px"/
+/ Michael Simmons, (Feb 15-2020) “Explanation Effect: Why You Should Always Teach What You Learn”, https://medium.com/accelerated-intelligence/explanation-effect-why-you-should-always-teach-what-you-learn-9800983a0ea1, last visited: 2020-02-19
+
+
+= slide 'Topics' do
+  / textarea.new-demo
+  pre.highlight.html
+    | 1. Introduction to Web architecture. Client Server Architecture 
+        and Technologies. Network Structure and Architecture – Basic Preliminaries
+      2. Introduction to Software Architecture. Basic Notions 6
+      3. Software Engineering Agile practices and processes 4
+      4. Markup Languages – HTML (XML). Document structure. 
+      Browser and rendering html document, CSS, JSON
+      5. PHP - Basics 2
+      6. PHP – Forms 4
+      7. JavaScript, AJAX, JQuery 2
+      8. Structured Query Language 4
+      9. Database Design, Java Database Connectivity 4
+      10. Servlets 2
+      11. Java Server Pages 2
+      12. Java Beans for JSP, Enterprise Java Beans 4
+      13. Microservices and Cloud architectures 4
+      14. Security and Reliability 3
+
+= slide 'Trustworthy' do
+  h2 Check your information!
+  img src="images/dontbelieve.png" width="600px"/
+
+= slide 'eLearning'
+  ol
+    li.action `Moodle` - <a href="https://learn.fmi.uni-sofia.bg/course/view.php?id=6296" target="_blank">link</a> 
+    li.action `SUSI` <a href="https://susi.uni-sofia.bg/ISSU/forms/Login.aspx" target="_blank">link</a>
+    li.action `Email` <a href="http://email.uni-sofia.bg">link</a>
+    li.action `FB group` - <a href="https://www.facebook.com/groups/629089307639028/" target="_blank">link</a>
+    li.action `AWS initiative` ?
+
+= slide 'Logistics' do
+  p.action Timetable: Lecture and labs
+  p.action Breaks
+  p.action AOB (any other business)?
+
+= slide 'Introduction' do
+  p.action `Program types` – scripting engines vs compilers. PHP: Hypertext Preprocessor – distribution, program lifecycle.
+  p.action `Programming environment` – editors vs IDEs. Discusion for core tools and programming stack for execution of PHP programs. Installation and configuration. Demo.
+  p.action `First program on PHP` – analysis and running Demo. 
+
+= slide 'XAMPP' do
+  p.action X
+  p.action A
+  p.action M
+  p.action P
+  p.action P
+
+= slide 'AWS' do
+  p.action A
+  p.action W
+  p.action S
+
+= slide 'XAMPP tool' do
+  ol
+    li.action The most popular PHP dev package
+    li.action For Windows, Mac OS X & Linux
+    li.action Easy installation and configuration
+    li.action Completely free of charge
+
+
+= slide 'Demo 1 (XAMPP)' do
+  p Task 1:  Install and configure environment for execution of  PHP scripts. https://www.apachefriends.org/index.html 
+
+= slide 'Demo 2 (PHP)' do
+= slide 'PHP script' do
+  textarea.example.php
+    | <!DOCTYPE html>
+      <html>
+        <body>		
+          <?php
+            phpinfo();
+          ?>
+        </body>	
+      </html>
+
+= slide 'Execution (recap)' do
+  h2 How web scripts are executed (simple version)
+  img src="images/php-process_mp.png" width="800px"/
+
+= slide 'OOP with PHP' do
+  / textarea.new-demo
+  textarea.example.php
+    | <?php
+        class Person {
+          public $name;
+
+          public function __construct($name) {
+             $this->name = $name;
+          }
+          public function greet() {
+            return 'Hi, my name is ' . $this->name;
+          }
+        }
+
+        $gosho = new Person('Artur Dent');
+        echo $gosho->name;
+        echo $gosho->greet();
+      ?>
+
+= slide 'Resources' do
+  ul
+    li.action PHP – Manual, < http://php.net/manual/en/index.php  >, last visited 2019-03-01
+    li.action PHP 7 is the latest stable release. This tutorial uses PHP 7.2.10, <https://www.w3schools.com/php7/> 
+  p.action PHP Tutorial at w3schools, http://www.w3schools.com/php/)
+
+= slide 'Recap'
+  ul
+    li.action Types of programming languages
+    li.action PHP – pros and cons
+    li.action Execution environment
+    li.action Simple web program of PHP – analysis, modification and execution

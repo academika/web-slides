@@ -6,3 +6,11 @@ link: https://git-scm.com/downloads/logos,
 last-visited: 2020-03-23
 
 
+	mp_prof.jpg (mp-arxiv)
+	learn-pyramid.png
+	personal-archive (mp-arxiv)
+
+Michael Simmons, (Feb 15-2020) “Explanation Effect: Why You Should Always Teach What You Learn”, https://medium.com/accelerated-intelligence/explanation-effect-why-you-should-always-teach-what-you-learn-9800983a0ea1, last visited: 2020-02-19
+
+[PROF_EN.html/2020-03-23]
+	php-process_mp.png (mp-arxiv)

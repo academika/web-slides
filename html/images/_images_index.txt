@@ -1,0 +1,8 @@
+GIT_EN.slim
+	Git-Logo-White.png, 
+	Git-Logo-Black.png
+
+link: https://git-scm.com/downloads/logos, 
+last-visited: 2020-03-23
+
+

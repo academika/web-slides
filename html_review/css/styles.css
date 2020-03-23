@@ -1,0 +1,37 @@
+header {
+    display: none;
+}
+
+body {
+    margin-left: 105px;
+}
+
+body {
+    counter-reset: section
+}
+
+h1:after {
+    counter-increment: section;
+    content: " (page " counter(section) ")";
+    /* content: attr(href, ) " )"; */
+    color: gray;
+}
+
+
+/* 
+@media print {
+    #main-content a[href]:after {
+        " (" attr(href) ") ";
+    }
+} */
+
+
+/* 
+@import url(http://weloveiconfonts.com/api/?family=brandico);
+
+p:before {
+    content: "\f303";
+    padding-right: 0.3em;
+    font-family: 'brandico', sans-serif;
+    font-size: 22px;
+} */

@@ -7,14 +7,18 @@
     div
       h2  
       img src="images/Git-Logo-Black.png" width="150px"/
-  p * `https://github.com/`  (<a href="https://github.com/">https://github.com</a>) - `Github Web UI`
-  p ** `https://desktop.github.com/`      (<a href="https://desktop.github.com/">https://desctop.github.com</a>) 
+  p * `https://github.com/`  (<a href="https://github.com/">https://github.com</a>) - `GitHub Web UI`
+  p ** git client options
+  ul
+    li `https://desktop.github.com/`      (<a href="https://desktop.github.com/">Desktop GitHub UI</a>)
+    li `https://www.sourcetreeapp.com/`      (<a href="https://www.sourcetreeapp.com/">Another git UI tool</a>)
+    li `https://git-scm.com/downloads`      (<a href="https://git-scm.com/downloads">Command line</a>)
 
 = slide 'Pre-requests' do
   ol
-    li Create fork for given project. Fork is making copy of existing project.
+    li Create fork for given project. Fork is making copy of existing project. OR You can create a new empty project in GitHub.
     li Create folder and enter with console¿  in that folder¿  (for example `c:\temp\myprj`) 
-    li `git status` - execute in selected folder. Result is that there is no project from git, forked here
+    li `git status` - execute in selected folder. Result should be that there is no project from git, forked here. If there is an existing project already in the directory, please create a different directory under another parent directory and repeat the check there.
     li `git clone https://github.com/git-account/name-of-project` - clone desired project localy
     li `cd name-of-project`
     li `git status` - returns status of project in current folder - says it is ok
@@ -25,15 +29,20 @@
     li To change directory use <em>cd name-of-directory</em> command. In our case <code>cd c:\temp\myprj</code>
     
 = slide 'Create branch' do
+  h2 Validate you are on master branch with your latest changes from remote repo
+  ol
+    li `git branch` - will tell you on which branch you are
+    li `git checkout master` - will checkout the master branch
+    li `git pull origin master` - will pull the latest changes from the master branch in the remote repo to your local one
   h2 Create branch
   ol
     li `git checkout -b my_task1` - creates branch, where you work on new feature (or bugfix).
-    li `git branch` - check wich branch we are currently working on; we have `master` (or main) branch  and `my_task1` (newly created branch).
+    li `git branch` - check which branch we are currently working on; we have `master` (or main) branch  and `my_task1` (newly created branch).
   h2 Add some work
   ol
     li Lets implement new feature (for example create folder, add or edit files), according to the requirements (or bug report)
-    li `git status` - gives in red, that there is file availabe, which is candidate for adding/uploading changes to our project 
-    li `git add filename` (or `git add folder/filename`) - adding file or folder
+    li `git status` - gives in red, that there is file available, which is candidate for adding/uploading changes to our project
+    li `git add filename` (or `git add folder/filename`) - adding file or folder to the `staging area` that is later going to be committed
     li `git status` - gives changes in green, that we have files in so called `staging area`. 
     li `git commit -m "Meaningfull message"` - commits all files and directories, added to staging area. 
   h2 Commit work to the branch repo

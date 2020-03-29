@@ -45,7 +45,11 @@
     li `git add filename` (or `git add folder/filename`) - adding file or folder to the `staging area` that is later going to be committed
     li `git status` - gives changes in green, that we have files in so called `staging area`. 
     li `git commit -m "Meaningfull message"` - commits all files and directories, added to staging area. 
-  h2 Commit work to the branch repo
+  h2 Push changes from local repo to remote repo so that changes are available also on GitHub
+  ol
+    li `git push origin my_task1` - this will transfer all the commits from our local branch to the branch in the remote (GitHub) repo
+    li We need to repeat this command each time that we have created new commits in the branch in the local repo
+  h2 Check commited work for the branch in the local repo
   ol
     li `git status` - returns that there is nothing to commit.
     li `git log` - we can see log of all changes to specified branch¿
@@ -56,7 +60,7 @@
 = slide 'Pull request (PR)' do
   p When you think you are ready with new feature (Minimum valuable product - `MVP`)
   ol
-    li You can make request for change, so called `Pull Request (PR) - this can be in our repository, in original repository, or any other repository, that cloned original repo.
+    li You can make request for change, so called `Pull Request (PR)` - this can be in our repository, in original repository, or any other repository, that cloned original repo.
     li From `Github Web UI` -> press `Pull Request`
     li Anyone with access to the repository can give feedback on our work
 

@@ -85,12 +85,14 @@
 = slide 'Resolve conflicts' do
   ol 
     li After working long time on any task - there can be a conflicts of local source code in branch and code on git server
-    li Generaly there are two options for fixing this: 1) Rebase (detach local folder from git, from the point of branch creation branch) merge code, and add back to server; 2) Merge of our feature branch
-    li `git branch` 
+    li If this is your first time fixing conflicts - please archive your whole local repository (including the hidden .git folder) so that you have a backup. And please do not push any changes to the remote until you are sure everything is working and fixed
+    li Generaly there are two options for fixing this: 1) Rebase - reattaches your feature branch after the latest remote (probably master) branch commit, creates a linear git commit history; 2) Merge - merges the remote (probably master) branch into your feature branch, creates graph-like history
+    li After we have fixed any possible conflicts we can continue:
+    li `git branch`
     li `git checkout master` - back to master branch
-    li When we merge our code merge - with pull request (PR) - it is still not in our local source code folder, so we need to download changes;
-    li After receiving feedback from your changes you can make new PR. 
-    li You need to download changes from branch and upload changes;
+    li When we merge our code merge - with pull request (PR) - it is still not in our local source code folder, so we need to pull the changes;
+    li After receiving feedback from your changes you can update the PR by adding new commits to the branch from which you opened the PR earlier and push them to the server/remote.
+    li You need to pull latest changes from the remote branch and push the new local changes later;
     li `git push origin my_task2` - push our work to the server
 
 / = slide 'Online platforms 2020'

@@ -70,12 +70,13 @@
     li In the meanwhile we can start work on other task. For this purpose we can create new branch (i.e. `my_task2`)
     li `git branch` - gives which is current branch in current directory
     li `git checkout master` - checkout/return to main (master) branch. If you check - can see that changes from previous branch doesn't exists on file system
-    li `git log` - can check that commit is not in `master` branch. 
+    li `git pull origin master` - will pull the latest changes from the master branch in the remote repo to your local one, e.g. if somebody already merged some PR
+    li `git log` - can check that commit is not in `master` branch.
   h2 Create second branch
   ol
     li `git checkout -b my_task2` - creates second branch (`my_task2`), for second task
     li Make modifications and programming and check with  `git status` - there are changes
-    li `git diff` - returns difference of current branch and that on server
+    li `git diff` - returns difference of the changes that you made since your last commit in the local branch
     li `git commit -m 'Meaningfull message about changes'` (add changes with message `Meaningfull message about changes`) 
     li `git status` - check about changes
     li `git push origin my_task2` - push changes to the server. Now we have two branches plus master branch

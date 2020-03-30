@@ -82,6 +82,16 @@
     li `git push origin my_task2` - push changes to the server. Now we have two branches plus master branch
     li Now again can make `pull request` - for merge changes to github via `Github Web UI`
 
+= slide 'cmd' do
+  h2 Git commands create new branch
+  textarea.cmd
+    | c:\temp\myprj>git branch
+      REM ****** create new branch if doesn't exist
+      c:\temp\myprj>git checkout -b my_task1
+
+/ = slide 'Git fire'
+/   img src="images/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png" width="600px"/
+  
 = slide 'Resolve conflicts' do
   ol 
     li After working long time on any task - there can be a conflicts of local source code in branch and code on git server

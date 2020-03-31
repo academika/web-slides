@@ -266,6 +266,10 @@ section { page-break-after: always;  clear: both; }
   .slide li.action { display:list-item; }
   .slide:last-child { display: none; }
   .intro { min-height: 200px; height: 60vw; position: relative; border: none;}
+  //MP-2020-03-24:cmd
+  .cmd {   background-color: #111;    /* color: #C0C0C0; */  color: #31ff0d;
+    padding: 10px; outline: 2px solid #AAA; font-size: 15px;
+    width: 40em;}
 }
 
 

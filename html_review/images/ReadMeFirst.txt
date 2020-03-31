@@ -1,0 +1,1 @@
+copy html\images\*.* html_review\images

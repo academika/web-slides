@@ -1,0 +1,104 @@
+= slide 'Git-future requests' do
+  p Create your github account* (in `Github Web UI`), and download git client**
+  .two-columns
+    div
+      h2  
+      img src="images/Git-Logo-White.png" width="150px"/
+    div
+      h2  
+      img src="images/Git-Logo-Black.png" width="150px"/
+  p * `https://github.com/`  (<a href="https://github.com/">https://github.com</a>) - `Github Web UI`
+  p ** `https://desktop.github.com/`      (<a href="https://desktop.github.com/">https://desctop.github.com</a>) 
+
+= slide 'Pre-requests' do
+  ol
+    li Create fork for given project. Fork is making copy of existing project.
+    li Create folder and enter with console¿  in that folder¿  (for example `c:\temp\myprj`) 
+    li `git status` - execute in selected folder. Result is that there is no project from git, forked here
+    li `git clone https://github.com/git-account/name-of-project` - clone desired project localy
+    li `cd name-of-project`
+    li `git status` - returns status of project in current folder - says it is ok
+
+  .questions
+    li For Windows use command: <em>Start->cmd</em> 
+  .questions
+    li To change directory use <em>cd name-of-directory</em> command. In our case <code>cd c:\temp\myprj</code>
+    
+= slide 'Create branch' do
+  h2 Create branch
+  ol
+    li `git checkout -b my_task1` - creates branch, where you work on new feature (or bugfix).
+    li `git branch` - check wich branch we are currently working on; we have `master` (or main) branch  and `my_task1` (newly created branch).
+  h2 Add some work
+  ol
+    li Lets implement new feature (for example create folder, add or edit files), according to the requirements (or bug report)
+    li `git status` - gives in red, that there is file availabe, which is candidate for adding/uploading changes to our project 
+    li `git add filename` (or `git add folder/filename`) - adding file or folder
+    li `git status` - gives changes in green, that we have files in so called `staging area`. 
+    li `git commit -m "Meaningfull message"` - commits all files and directories, added to staging area. 
+  h2 Commit work to the branch repo
+  ol
+    li `git status` - returns that there is nothing to commit.
+    li `git log` - we can see log of all changes to specified branch¿
+    li Now we can go to the `Github Web UI` and can see that there is one more  branch created
+  .questions
+    li Exit with <em>q</em> 
+
+= slide 'Pull request (PR)' do
+  p When you think you are ready with new feature (Minimum valuable product - `MVP`)
+  ol
+    li You can make request for change, so called `Pull Request (PR)` - this can be in our repository, in original repository, or any other repository, that cloned original repo.
+    li From `Github Web UI` -> press `Pull Request`
+    li Anyone with access to the repository can give feedback on our work
+
+= slide 'Second branch' do
+  h2 Return to main branch
+  ol
+    li In the meanwhile we can start work on other task. For this purpose we can create new branch (i.e. `my_task2`)
+    li `git branch` - gives which is current branch in current directory
+    li `git checkout master` - checkout/return to main (master) branch. If you check - can see that changes from previous branch doesn't exists on file system
+    li `git log` - can check that commit is not in `master` branch. 
+  h2 Create second branch
+  ol
+    li `git checkout -b my_task2` - creates second branch (`my_task2`), for second task
+    li Make modifications and programming and check with  `git status` - there are changes
+    li `git diff` - returns difference of current branch and that on server
+    li `git commit -m 'Meaningfull message about changes'` (add changes with message `Meaningfull message about changes`) 
+    li `git status` - check about changes
+    li `git push origin my_task2` - push changes to the server. Now we have two branches plus master branch
+    li Now again can make `pull request` - for merge changes to github via `Github Web UI`
+
+= slide 'cmd' do
+  h2 Git commands create new branch
+  textarea.cmd
+    | c:\temp\myprj>git branch
+      REM ****** create new branch if doesn't exist
+      c:\temp\myprj>git checkout -b my_task1
+
+/ = slide 'Git fire'
+/   img src="images/in-case-of-fire-1-git-commit-2-git-push-3-leave-building2.png" width="600px"/
+  
+= slide 'Resolve conflicts' do
+  ol 
+    li After working long time on any task - there can be a conflicts of local source code in branch and code on git server
+    li Generaly there are two options for fixing this: 1) Rebase (detach local folder from git, from the point of branch creation branch) merge code, and add back to server; 2) Merge of our feature branch
+    li `git branch` 
+    li `git checkout master` - back to master branch
+    li When we merge our code merge - with pull request (PR) - it is still not in our local source code folder, so we need to download changes;
+    li After receiving feedback from your changes you can make new PR. 
+    li You need to download changes from branch and upload changes;
+    li `git push origin my_task2` - push our work to the server
+
+/ = slide 'Online platforms 2020'
+/   ol
+/     li Kahoot  / Kahoot quiz
+/     li Zoom.us
+/     li Discord
+/     li ms teams?
+/     li fb live stream
+/     li youtube stream?
+/     li bbb?
+
+        
+
+

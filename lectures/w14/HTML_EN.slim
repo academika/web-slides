@@ -1,0 +1,371 @@
+= slide 'HTML tag' do
+  img src="images/html_tag.png"
+
+= slide 'HTML' do
+  ul
+    li HyperText Markup Language
+    li XHTML vs HTML 5
+    li HTML has difference with XHTML and new features
+    li XHTML requires to have valid XML document
+    li In current course we will use HTML 5
+= slide 'Sample XHTML document' do
+  textarea[style="display: none"]
+    | <body></body>
+  / first one is to clear the extra div
+  textarea.single-demo
+    | <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+      <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          <title>Register</title>
+          <link href="style.css" rel="stylesheet" type="text/css" />
+          <script type="text/javascript" src="script.js" defer="defer"></script>
+          <style type="text/css"> /* CSS Comment */ </style>
+        </head>
+        <body>
+          <h1>Register</h1>
+          <label for="username">Username</label>
+          <input name="username" id="username" type="text" required="required" autofocus="autofocus" />
+          <!-- HTML Comment -->
+        </body>
+      </html>
+= slide 'The same in HTML 5' do
+  textarea.single-demo
+    | <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="UTF-8">
+          <title>Register</title>
+          <link href="style.css" rel="stylesheet">
+          <script src="script.js" defer></script>
+          <style> /* CSS Comment */ </style>
+        </head>
+        <body>
+          <h1>Register</h1>
+          <label for="username">Username</label>
+          <input name="username" id="username" type="text" required autofocus>
+          <!-- HTML Comment -->
+        </body>
+      </html>
+= slide 'Self closing tags' do
+  list:
+    As you can see <em>almost</em> every tag has closing tags.
+    Some of them has `&lt;tag&gt;content&lt;/tag&gt;` and can be:
+    `&lt;tag /&gt;` in XHTML or `&lt;tag&gt;` in HTML (in HTML 5 both are ok)
+    Those tags are called self-closing. Such tags are:
+    `br`, `hr`, `img`, `input`, `link`, `meta`, `param`
+    Even this syntax may work on other elements - <em>dont use it</em> on those.
+= slide 'Boolean attributes' do
+  p There are "boolean" attributes, where we want to know only if they exists.
+  ul
+    li.action script: `async`, `defer`
+    li.action input: `autofocus`, `checked`, `disabled`, `required`, `selected`
+    li.action select:  `multiple`
+    li.action media: `autoplay`, `loop`, `muted`, `controls`
+    li.action Why write `checked="checked"`, and not `checked="true/false"`  ¿
+
+  .questions
+    li Only the <em>existance</em> off attribute means that it is true. Even if we write `checked="false"` the attribute is true. Thats why "checked" is less probably to be mistaken. In html5 we can ommit value of such attributes.
+
+= slide 'HTML Entities' do
+  ul
+    li.action As we see `&lt;` and `&gt;` are used in tag syntax. So how can we write them?
+    li.action There are groups of codes, responsible for specific symbols. Instead symbols we use such codes, and browser knows how to represent it correclty.
+    li.action Syntax is <code>&amp;entity_name;</code> (or <code>&amp;#entity_number;</code>)
+    li.action Browsers are smart enough, but don't miss the <code>;</code>
+    li.action
+      | <table>
+          <tbody>
+            <tr><th>Symbol</th><td>`&nbsp;`</td><td>`&lt;`</td><td>`&gt;`</td><td>`&amp;`</td><td>`&larr;`</td><td>`&spades;`</td></tr>
+            <tr><th>Code</th><td>`&amp;nbsp;`</td><td>`&amp;lt;`</td><td>`&amp;gt;`</td><td>`&amp;amp;`</td><td>`&amp;larr;`</td><td>`&amp;spades;`</td></tr>
+          </tbody>
+        </table>
+    li.action <a href="http://www.freeformatter.com/html-entities.html">Пълен списък</a>
+= slide 'Core HTML tags' do
+  dl
+    dt System 
+    dd html, body, head, title, script, style, meta, link
+    dt Structure 
+    dd div, p, span, object, param
+    dt Formatting
+    dd del, ins, strong, em, sub, sup, wbr, br
+    dt Lists
+    dd ul, ol, li, dl, dt, dd
+    dt Forms
+    dd form, fieldset, legend, label, input, textarea, button, select, option, optgroup
+    dt Tables
+    dd table, thead, tfoot, tbody, tr, td, th
+    dt Other
+    dd img, iframe, a
+= slide 'System tags' do
+  list:
+    doctype - not really tag, but it gives doctype of the document. In HTML 5 it is defined as &lt;!DOCTYPE html&gt;, for other you can check in google
+    `html` - root element of document
+    `head` - element, contains system information for browser - metadata, styles, scripts, etc
+    `body` - element, contains information for visualization
+    `title` - title of the window/tab
+    `script` - usually contains javascript code; if you give other value - can be used for container for whatever you like
+    `style` - contains your styles
+    `meta` - meta-data like encoding, author, summary etc
+    `link` - link to other files - css, favicon...
+= slide 'Core tags' do
+  ul
+    li.action `div` - simple rectangle, without semantics; most web sites is using it for nested divs for making layout
+    li.action `p` - paragraph
+    li.action `span` - common tag for phrase/text, usually for applying some style on it
+    li.action
+      div `img` - image
+      ul
+        li attribute `src` - url of image
+        li атрибут `alt` - alternative text, available when image is not available (or cannot be shown)
+    li.action
+      div `a` - hyperlinc (anchor)
+      ul
+        li attribute `href` - where link points
+        li attribute `target` - where to open
+    / li.action `object` и `param` - някакъв обект обикновено flash, съответно някакво видео или игра (и някакви параметри за обекта)
+= slide 'Formatting tags' do
+  list:
+    `del` - deleted - <del>Deleted text</del>
+    `ins` - inserted - <ins>Added text</ins>
+    `em` - emphasis - <em>Bold text</em>
+    `strong` - strong emphasis - <strong>Important text</strong>
+    `sub` - H<sub>1</sub>
+    `sup` - x<sup>n</sup>
+    `br` -  break row - \n in html - new line
+    `wbr` - word break - Place where word can break
+= slide 'Lists' do
+  list:
+    `ul` - Unordered List - with bullet points
+    `ol` - Ordered List - 1, 2, 3, I, II, III, A, B, C
+    `li` - List Item - element from lists above
+    `dl` - Definition List - definition list with temrs and descriptions
+    `dt` - Definition Term - term
+    `dd` - Definition Description - description
+= slide 'Lists - Демо' do
+  textarea.new-demo
+    | <h4>Unordered List:</h4>
+      <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+      <h4>Ordered List:</h4>
+      <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ol>
+
+      <h4>Definition List:</h4>
+      <dl>
+        <dt>Cola</dt>
+        <dt>Coffee</dt>
+        <dd>Both Contain caffeine<dd>
+
+        <dt>Tea</dt>
+        <dd>Relaxes you<dd>
+
+        <dt>Milk</dt>
+        <dd>Is important for young kids</dd>
+        <dd>Contains Calcium</dd>
+      </dl>
+= slide 'Forms' do
+  list:
+    `form` -  form in web; important attributes `method="post/get"` и `action="url"`
+    `fieldset` - grouping element for related parts in form
+    `legend` - title of parent fieldset
+    `input` - input field; important attribute `name` - you can access value via this attribute; one of several self-closing tags.
+    `label` - "lable" for specified input - annotates for what is attribute. Can surround input tag or to specify "for" attribute; then when click on text in label element - focus will be on the input field.
+    `textarea` - Multi-line reacangular area for input of data - like big input. As oposite of input - textarea <em>IS NOT</em> self-closing tag. Preserves whitespaces.
+    `button` - button - on click - send specified form to server, or executes javascript code if specified; 
+    `select` - dropdown menu; can add attribute multi.
+    `option` - option from select
+    `optgroup` - grouping options in select - not necessary. But if grouped - you can specify label attribute - name of group.
+= slide 'Forms - Demo' do
+  textarea.new-demo
+    | <form>
+        <fieldset>
+          <legend> Register </legend>
+          <label> Username <input placeholder="John Smith"> </label>
+          <label> Password <input type="password">          </label>
+          <label> Email    <input type="email" placeholder="a@a.com"> </label>
+          Gender
+          <label> Male   <input type="radio" name="gender" value="M"> </label>
+          <label> Female <input type="radio" name="gender" value="F"> </label>
+          Age Group
+          <select>
+            <option value="1"> Kid (0-12) </option>
+            <option value="2"> Teen (13-19) </option>
+            <option value="3"> Adult (20+) </option>
+          </select>
+        </fieldset>
+      </form>
+= slide 'Tables' do
+  list:
+    `table` - table
+    `thead` - table header/upper part of table
+    `tbody` - content of table
+    `tfoot` - lower part of table
+    `tr` - table row 
+    `td` - table data - table cell
+    `th` - table header - header cell (usually used for label of columns)
+= slide 'Tables - Demo' do
+  textarea.new-demo
+    | <table border="1">
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Savings</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td>Sum</td>
+            <td>$180</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr>
+            <td>January</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>February</td>
+            <td>$80</td>
+          </tr>
+        </tbody>
+      </table>
+/ = slide 'Frames (Фреймове / Рамки)' do
+/   list:
+/     `frame`, `frameset`, `noframes`
+/     <blockquote>An elegant weapon for a more civilised age<blockquote> - Obi Wan</blockquote></blockquote>
+/     Или нещо което много хора мразеха и накрая се оттърваха - <a href="http://www.apptools.com/rants/framesevil.php">Why Frames Are Evil</a> - премахнати са в HTML 5
+/     Преди много много години в един далечен web не беше нужно php за някои от нещата, нямаше и ajax, но имаше фреймове. Разделяха сайта на парчета - меню, съдържание и други и ги зареждаха в фреймове, намиращи се във frameset.
+/     Това време отмина. Остана само Люк (наречен iframe) - последният джедай.
+/     `iframe` - "рамка" съдържаща друга страница - остана в стандарта може би основно заради security причини
+= slide 'Frames Demo' do
+  ul
+    li iframe embed other web page in your page.
+    li In the past there was other tags, but these are removed.
+  textarea.new-demo
+    iframe src='https://goo.gl/ydUi9s'
+= slide 'HTML5' do
+  dl
+    dt What is removed in HTML 5
+    dd acronym, applet, basefont, big, center, dir, font, frame, frameset, noframes, strike, tt
+    dt Not recommended elements
+    dd b, i, small
+    dt New semantic elements - strongly recommended
+    dd
+      ' header, footer, aside, nav, article, section, figure, figcaption, mark
+      span.note тази група се води, че не работи под IE < 9, но има лесен polyfill
+    dt New media elements
+    dd embed, video, source, audio, track
+    dt New canvas element
+    dd used for drawing graphics , animations and others
+    dt New datalist element
+    dd defines options in html5 autocomplete for given input
+    dt Many new types of input input
+    dd email, number, tel, color, range, search, url, time, date, datetime, datetime-local, month, week
+= slide 'Semantics' do
+  / .two-columns
+  /   div
+  /     h2 HTML 4
+  /     img src="images/html4.png"
+  /   div
+  /     h2 HTML 5
+  /     img src="images/html5_structure.png"
+  table
+    tr
+      th HTML 4
+      th HTML 5
+    tr
+      td
+        img src="images/html4.gif"
+      td
+        img src="images/html5_structure.gif"
+
+= slide 'New HTML5 elements in details' do
+  list:
+    `header` - header part, usually used logo and/or navigation
+    <del>`hgroup` - group of headers, sub-headers, etc</del> - removed
+    `footer` - final part - usually contains &copy; and others
+    `aside` - side part, can contain adverts, and other related to the core materials sections
+    `nav` - navigation
+    `main` - main content of the page - must not contain elements, which are in other pages (like menus)
+    `article` - element, that contains information that is standalone which can be extracted from the context and stay still relevant. Usually also has header and footer elements
+    `section` - element, which groups information from page. It is expected that any section has to have title
+    `figure` - element - image container (known as figure), it is expected to have figcaption
+    `figcaption` - title of the figure
+    `mark` - known as 'the new span' - used to mark sections in text. In some browsers there are  default values for text and background color
+/ = slide 'Как да ги подкарам на IE 6-8?' do
+/   ul
+/     li Това вече не би трябвало да ни интересува много, но терминалите на летища, гари, метро използват нещо наречено SiteKiosk, което реално е просто старо IE
+/     li
+/       | <xmp><!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--></xmp>
+/     li
+/       | Или можете да си напишете набързо своя версия - не сме учили още js, но не е сложно:
+/         <xmp><!--[if lt IE 9]><script>(function(){
+/         var HTML5_ELEMENTS = ['header', 'footer', 'aside', 'nav', 'article', 'section', 'figure', 'figcaption', 'mark'];
+/         for (var i = HTML5_ELEMENTS.length - 1; i >= 0; i--) document.createElement(HTML5_ELEMENTS[i]);
+/         })()</script><![endif]--></xmp>
+/     li Сложете го някъде в началото на страницата (head)
+/     li Задайте и CSS-a за всеки случай:
+/     li <code>header, footer, aside, nav, article, section, figure, figcaption {display: block}</code>
+= slide 'HTML5 media demo' do
+  p embed, video, source, audio, track, canvas, svg - <a href="http://caniuse.com">caniuse.com</a>
+  textarea.new-demo
+    | <h4>Audio</h4>
+      <audio controls>
+        <source src="http://w3schools.com/html/horse.mp3" type="audio/mpeg">
+      </audio>
+
+      <h4>Video</h4>
+      <video width="320" height="240" controls>
+        <source src="http://w3schools.com/html/movie.mp4" type="video/mp4">
+      </video>
+
+      <h4>SVG (Scalable Vector Graphics)</h4>
+      <svg height="100">
+        <polygon points="45,5 15,100 90,40 0,40 75,100" style="fill:#6a6"/>
+      </svg>
+
+      <h4>Canvas</h4>
+      <canvas width="20" height="10"> Draw here with javascript. </canvas>
+
+  / <polygon points="100,10 40,180 190,60 10,60 160,180"
+        <polygon points="9,1 3,20 18,8 0,8 15,20" style="fill-rule:nonzero;" />
+  / style="fill:#6a6;stroke:#339;stroke-width:5;fill-rule:evenodd;" />
+  / <polygon points="9,1 3,19.8 18,7.8 0,7.8 15,19.8" style="fill-rule:nonzero;" />
+= slide 'HTML5 forms demo' do
+  textarea.new-demo
+    | <h4>HTML5 Autocomplete with datalist</h4>
+      <input list="browsers">
+
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+
+      <h4>New input types</h4>
+      <label> Range  <input type="range" min="0" max="100"> </label>
+      <label> Search <input type="search"> </label>
+      <label> Color  <input type="color">  </label>
+      <label> Date   <input type="date">   </label>
+
+/ = slide 'Бонус - XHTML 2' do
+/   list:
+/     Всъщност има и XHTML 2 и макар и едва ли скоро ще ви се наложите да пишете на него, е добре поне да знаете за съществуването му.
+/     <a href="http://xhtml.com/en/future/x-html-5-versus-xhtml-2/">XHTML 2 vs HTML 5</a>
+/     Някои интересни особености около него:
+/     `nl` таг - Navigation List. Освен `li`-та съдържа и един `label` в началото.
+/     `di` таг, който да групира термини (`dt`) и описания (`dd`) в definition list-a (`dl`)
+/     `href` атрибутът е валиден за всеки елемент (всеки елемент може да е линк)
+/     `h` таг, който да описва заглавие на секция - по-удобно и семантично от /h[1-6]/
+/     `role` атрибут, който също има потенциал
+/     Между другото CSS може да се прилага и на HTML и XHTML и на какъвто и да е XML
